@@ -7,3 +7,5 @@ Paste in post model:
 ```php
     use Cviebrock\EloquentSluggable\Sluggable;
 ```
+
+$ php artisan migrate --seed
