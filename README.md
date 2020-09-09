@@ -12,3 +12,7 @@ $ php artisan migrate --seed
 
 ## Creating posts views
 $ php artisan make:controller PageController
+
+## Bootsrap configuration
+$ npm install
+$ npm run dev
