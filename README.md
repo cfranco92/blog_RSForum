@@ -16,3 +16,6 @@ $ php artisan make:controller PageController
 ## Bootsrap configuration
 $ npm install
 $ npm run dev
+
+## Posts controller - Backend
+$ php artisan make:controller Backend/PostController --resource --model=Post
