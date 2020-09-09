@@ -9,3 +9,6 @@ Paste in post model:
 ```
 
 $ php artisan migrate --seed
+
+## Creating posts views
+$ php artisan make:controller PageController

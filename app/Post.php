@@ -23,4 +23,9 @@ class Post extends Model
             ]
         ];
     }
+
+    // Relation belongs to User
+    public function user() {
+        return $this->belongsTo(User::class);
+    }
 }
