@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Post;
 use Illuminate\Http\Request;
 
 class PageController extends Controller
@@ -11,7 +12,7 @@ class PageController extends Controller
             'posts' => Post::with('user')->latest()->paginate()
         ]);
     }
-
+    
     public function post(Post $post) {
         return view('post', ['post' => $post]);
     }

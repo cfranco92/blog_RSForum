@@ -1,9 +1,9 @@
 <?php
+
 namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
 use App\Post;
-// use Illuminate\Http\Request;
 use App\Http\Requests\PostRequest;
 
 use Illuminate\Support\Facades\Storage;
@@ -18,8 +18,10 @@ class PostController extends Controller
     public function index()
     {
         $posts = Post::latest()->get();
+
         return view('posts.index', compact('posts'));
     }
+
     /**
      * Show the form for creating a new resource.
      *
@@ -29,6 +31,7 @@ class PostController extends Controller
     {
         return view('posts.create');
     }
+
     /**
      * Store a newly created resource in storage.
      *
@@ -41,14 +44,17 @@ class PostController extends Controller
         $post = Post::create([
             'user_id' => auth()->user()->id
         ] + $request->all());
+
         // image
         if ($request->file('file')) {
             $post->image = $request->file('file')->store('posts', 'public');
             $post->save();
         }
+
         // return
         return back()->with('status', 'Successfully created');
     }
+
     /**
      * Display the specified resource.
      *
@@ -59,6 +65,7 @@ class PostController extends Controller
     {
         //
     }
+
     /**
      * Show the form for editing the specified resource.
      *
@@ -69,6 +76,7 @@ class PostController extends Controller
     {
         return view('posts.edit', compact('post'));
     }
+
     /**
      * Update the specified resource in storage.
      *
@@ -78,7 +86,6 @@ class PostController extends Controller
      */
     public function update(PostRequest $request, Post $post)
     {
-        //
         $post->update($request->all());
 
         if ($request->file('file')) {
@@ -98,7 +105,6 @@ class PostController extends Controller
      */
     public function destroy(Post $post)
     {
-        //
         Storage::disk('public')->delete($post->image);
         $post->delete();
 

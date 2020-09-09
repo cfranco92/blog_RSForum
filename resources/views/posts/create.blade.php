@@ -17,7 +17,7 @@
                     <form 
                         action="{{ route('posts.store') }}"
                         method="POST"
-                        encrypt="multipart/form-data"
+                        enctype="multipart/form-data"
                     >
                         <div class="form-group">
                             <label>Title *</label>
