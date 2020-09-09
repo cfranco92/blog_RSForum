@@ -1,10 +1,11 @@
 <?php
-
 namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
 use App\Post;
 use Illuminate\Http\Request;
+// use Illuminate\Http\Request;
+use App\Http\Requests\PostRequest;
 
 class PostController extends Controller
 {
@@ -16,10 +17,8 @@ class PostController extends Controller
     public function index()
     {
         $posts = Post::latest()->get();
-
         return view('posts.index', compact('posts'));
     }
-
     /**
      * Show the form for creating a new resource.
      *
@@ -29,16 +28,28 @@ class PostController extends Controller
     {
         return view('posts.create');
     }
-
     /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(PostRequest $request)
     {
         //
+        // save
+        $post = Post::create([
+            'user_id' => auth()->user()->id
+        ] + $request->all());
+
+        // image
+        if ($request->file('file')) {
+            $post->image = $request->file('file')->store('posts', 'public');
+            $post->save();
+        }
+
+        // return
+        return back()->with('status', 'Successfully created');
     }
 
     /**
@@ -51,7 +62,6 @@ class PostController extends Controller
     {
         //
     }
-
     /**
      * Show the form for editing the specified resource.
      *
@@ -62,7 +72,6 @@ class PostController extends Controller
     {
         //
     }
-
     /**
      * Update the specified resource in storage.
      *
@@ -74,7 +83,6 @@ class PostController extends Controller
     {
         //
     }
-
     /**
      * Remove the specified resource from storage.
      *

@@ -17,15 +17,15 @@
                     <form 
                         action="{{ route('posts.store') }}"
                         method="POST"
-                        encrypt="multipart/form-date"
+                        encrypt="multipart/form-data"
                     >
                         <div class="form-group">
                             <label>Title *</label>
-                            <input type="text" name="Title" class="form-control" required>
+                            <input type="text" name="title" class="form-control" required>
                         </div>
                         <div class="form-group">
                             <label>Image</label>
-                            <input type="file" name="File">
+                            <input type="file" name="file">
                         </div>
                         <div class="form-group">
                             <label>Content *</label>

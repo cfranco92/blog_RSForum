@@ -19,3 +19,7 @@ $ npm run dev
 
 ## Posts controller - Backend
 $ php artisan make:controller Backend/PostController --resource --model=Post
+
+## Post request
+$ php artisan make:request PostRequest
+
