@@ -1,5 +1,4 @@
 @extends('layouts.app')
-
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
@@ -8,6 +7,7 @@
                 <div class="card-header">
                     Items
                     <a href="{{ route('posts.index') }}" class="btn btn-sm btn-primary float-right">Create</a>
+                    <a href="{{ route('posts.create') }}" class="btn btn-sm btn-primary float-right">Create</a>
                 </div>
 
                 <div class="card-body">
@@ -16,7 +16,6 @@
                             {{ session('status') }}
                         </div>
                     @endif
-
                     <table class="table">
                         <thead>
                             <tr>
