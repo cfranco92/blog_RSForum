@@ -41,4 +41,8 @@ class Post extends Model
             return url("storage/$this->image");
         }
     }
+    
+    public function comments() {
+        return $this->hasMany(Comment::class);
+    }
 }

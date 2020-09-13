@@ -34,12 +34,15 @@ class CommentController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CommentRequest $request)
     {
         // save
         $comment = Comment::create([
             'user_id' => auth()->user()->id
         ] + $request->all());
+
+        // return
+        return back()->with('status', 'Successfully created');
     }
 
     /**
