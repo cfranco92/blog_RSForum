@@ -13,11 +13,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', 'PageController@posts');
-Route::get('/blog/{post}', 'PageController@post')->name('post');
-
 Auth::routes();
+Route::get('/', 'PageController@posts');
 
+Route::get('/blog/{post}', 'PageController@post')->name('post');
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::resource('posts', 'Backend\PostController')
@@ -25,5 +24,9 @@ Route::resource('posts', 'Backend\PostController')
 ->except('show');
 
 Route::resource('comments', 'Backend\CommentController')
-->middleware('auth')
-->except('show');
+->middleware('auth');
+// ->except('show');
+
+Route::resource('replies', 'Backend\ReplyController')
+->middleware('auth');
+// ->except('show');
