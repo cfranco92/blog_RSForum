@@ -17,6 +17,7 @@ Auth::routes();
 Route::get('/', 'PageController@posts');
 
 Route::get('/blog/{post}', 'PageController@post')->name('post');
+Route::get('/blog/comment/{comment}', 'PageController@comment')->name('comment');
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::resource('posts', 'Backend\PostController')
