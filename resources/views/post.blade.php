@@ -29,11 +29,30 @@
                             <ul id="errors">
                                     <b>Comments:</b><br />
                                     @foreach($post->comments as $comment)
-                                        - {{ $comment->get_description }}<br />
+                                        {{ $comment->get_description }}<br />
                                         <em>
                                             &ndash; {{ $comment->user->name }}
-                                            {{ $comment->created_at->format('d M Y') }} <hr>
+                                            {{ $comment->created_at->format('d M Y') }}
                                         </em>
+                                        {{-- <div class="row p-5"> --}}
+                                            <div class="col-md-12">
+                                                <ul id="errors">
+                                                        <b>Replies:</b><br />
+                                                        @foreach($comment->replies as $reply)
+                                                            {{ $reply->get_description }}<br />
+                                                            <em>
+                                                                &ndash; {{ $reply->user->name }}
+                                                                {{ $reply->created_at->format('d M Y') }}
+                                                            </em>
+                                                            <hr>
+                                                        @endforeach
+                                                </ul>
+                                            </div>
+                                        {{-- </div> --}}
+                                        <p class="card-text">
+                                            <a href="{{ route('comment', $comment) }}">Reply Comment</a>
+                                        </p>
+                                        <hr>
                                     @endforeach
                             </ul>
                         </div>

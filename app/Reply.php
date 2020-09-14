@@ -4,22 +4,18 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Comment extends Model
+class Reply extends Model
 {
     protected $fillable = [
-        'description', 'post_id', 'user_id'
+        'description', 'comment_id', 'user_id'
     ];
 
     public function user() {
         return $this->belongsTo(User::class);
     }
     
-    public function post() {
-        return $this->belongsTo(Post::class);
-    }
-
-    public function replies() {
-        return $this->hasMany(Reply::class);
+    public function comment() {
+        return $this->belongsTo(Comment::class);
     }
 
     public function getGetDescriptionAttribute() {
