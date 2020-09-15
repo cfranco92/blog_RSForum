@@ -1,3 +1,4 @@
+<!-- Developed by Cristian Franco Bedoya -->
 <?php
 
 /** @var \Illuminate\Database\Eloquent\Factory $factory */

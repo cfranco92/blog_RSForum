@@ -1,5 +1,5 @@
 <?php
-
+// Developed by Cristian Franco Bedoya
 namespace App;
 
 use Illuminate\Contracts\Auth\MustVerifyEmail;

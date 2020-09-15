@@ -1,5 +1,5 @@
 <?php
-
+// Developed by Cristian Franco Bedoya
 namespace App\Http\Middleware;
 
 use Illuminate\Foundation\Http\Middleware\TrimStrings as Middleware;

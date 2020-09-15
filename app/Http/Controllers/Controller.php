@@ -1,5 +1,5 @@
 <?php
-
+// Developed by Cristian Franco Bedoya
 namespace App\Http\Controllers;
 
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;

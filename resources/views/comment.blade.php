@@ -1,3 +1,4 @@
+{{-- Developed by Santiago Ramón Álvarez Gómez --}}
 @extends('layouts.app')
 
 @section('content')

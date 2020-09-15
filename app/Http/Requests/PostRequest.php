@@ -1,5 +1,5 @@
 <?php
-
+// Developed by Cristian Franco Bedoya
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;

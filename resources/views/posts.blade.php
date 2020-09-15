@@ -1,3 +1,4 @@
+{{-- Developed by Cristian Franco Bedoya --}}
 @extends('layouts.app')
 
 @section('content')

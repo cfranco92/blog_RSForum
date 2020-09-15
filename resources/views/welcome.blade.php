@@ -1,3 +1,4 @@
+{{-- Developed by Cristian Franco Bedoya --}}
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>

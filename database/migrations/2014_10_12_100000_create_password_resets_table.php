@@ -1,3 +1,4 @@
+<!-- Developed by Cristian Franco Bedoya -->
 <?php
 
 use Illuminate\Database\Migrations\Migration;

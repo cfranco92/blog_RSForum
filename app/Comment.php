@@ -1,5 +1,5 @@
 <?php
-
+// Developed by Santiago Ramón Álvarez Gómez
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;

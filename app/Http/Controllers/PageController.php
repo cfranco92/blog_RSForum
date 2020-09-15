@@ -1,5 +1,5 @@
 <?php
-
+// Developed by Cristian Franco Bedoya & Santiago Ramón Álvarez
 namespace App\Http\Controllers;
 
 use App\Post;
