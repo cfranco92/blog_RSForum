@@ -25,3 +25,7 @@ $ php artisan make:request PostRequest
 
 ## Access to public folder
 $ php artisan storage:link
+
+## Unit test
+$ php artisan make:test UserTest --unit
+$ vendor/bin/phpunit
