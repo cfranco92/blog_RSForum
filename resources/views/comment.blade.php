@@ -8,11 +8,11 @@
             <div class="card mb-4">
                 <div class="card-body">
                     <p class="card-text">
-                        {{ $comment->description }}
+                        {{ $comment->getDescription() }}
                     </p>
                     <p class="text-muted mb-0">
                         <em>
-                            &ndash; {{ $comment->user->name }}
+                            &ndash; {{ $comment->user->getName() }}
                         </em>
                         {{ $comment->created_at->format('d M Y') }}
                     </p>
@@ -23,7 +23,7 @@
                                     @foreach($comment->replies as $reply)
                                         {{ $reply->get_description }}<br />
                                         <em>
-                                            &ndash; {{ $reply->user->name }}
+                                            &ndash; {{ $reply->user->getName() }}
                                             {{ $reply->created_at->format('d M Y') }}
                                         </em>
                                         <hr>

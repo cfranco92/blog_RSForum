@@ -28,8 +28,8 @@
                             <tbody>
                                 @foreach ($posts as $post)
                                     <tr>
-                                        <td>{{ $post->id }}</td>    
-                                        <td>{{ $post->title }}</td>
+                                        <td>{{ $post->getId() }}</td>    
+                                        <td>{{ $post->getTitle() }}</td>
                                         <td>
                                             <a href="{{ route('posts.edit', $post) }}" class="btn btn-primary btn-sm">
                                                 Edit

@@ -10,18 +10,18 @@
                     <img src="{{ $post->get_image }}" class="card-img-top">
                 @endif
                 <div class="card-body">
-                    <h5 class="card-title">{{ $post->title }}</h5>
+                    <h5 class="card-title">{{ $post->getTitle() }}</h5>
                     @if ($post->iframe)
                         <div class="embed-responsive embed-responsive-16by9">
-                            {!! $post->iframe !!}
+                            {!! $post->getIframe() !!}
                         </div>
                     @endif
                     <p class="card-text">
-                        {{ $post->body }}
+                        {{ $post->getBody() }}
                     </p>
                     <p class="text-muted mb-0">
                         <em>
-                            &ndash; {{ $post->user->name }}
+                            &ndash; {{ $post->user->getName() }}
                         </em>
                         {{ $post->created_at->format('d M Y') }}
                     </p>
@@ -32,7 +32,7 @@
                                     @foreach($post->comments as $comment)
                                         {{ $comment->get_description }}<br />
                                         <em>
-                                            &ndash; {{ $comment->user->name }}
+                                            &ndash; {{ $comment->user->getName() }}
                                             {{ $comment->created_at->format('d M Y') }}
                                         </em>
                                         {{-- <div class="row p-5"> --}}
@@ -42,7 +42,7 @@
                                                         @foreach($comment->replies as $reply)
                                                             {{ $reply->get_description }}<br />
                                                             <em>
-                                                                &ndash; {{ $reply->user->name }}
+                                                                &ndash; {{ $reply->user->getName() }}
                                                                 {{ $reply->created_at->format('d M Y') }}
                                                             </em>
                                                             <hr>

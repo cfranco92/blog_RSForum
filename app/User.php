@@ -44,4 +44,36 @@ class User extends Authenticatable
     public function comment() {
         return $this->hasMany(Comment::class);
     }
+
+    // ID
+    public function getId() {
+        return $this->attributes['id'];
+    }
+    public function setId($id) {
+        $this->attributes['id'] = $id;
+    }
+    
+    // Name
+    public function getName() {
+        return $this->attributes['name'];
+    }
+    public function setName($name) {
+        $this->attributes['name'] = $name;
+    }
+
+    // Email
+    public function getEmail() {
+        return $this->attributes['email'];
+    }
+    public function setEmail($email) {
+        $this->attributes['email'] = $email;
+    }
+
+    // Password
+    public function getPassword() {
+        return $this->attributes['password'];
+    }
+    public function setPassword($password) {
+        $this->attributes['password'] = $password;
+    }
 }

@@ -11,18 +11,18 @@
                     <img src="{{ $post->get_image }}" class="card-img-top">
                 @elseif ($post->iframe)
                     <div class="embed-responsive embed-responsive-16by9">
-                        {!! $post->iframe !!}
+                        {!! $post->getIframe() !!}
                     </div>
                 @endif
                 <div class="card-body">
-                    <h5 class="card-title">{{ $post->title}}</h5>
+                    <h5 class="card-title">{{ $post->getTitle() }}</h5>
                     <p class="card-text">
                         {{ $post->get_excerpt }}
                         <a href="{{ route('post', $post) }}">Reed More</a>
                     </p>
                     <p class="text-muted mb-0">
                         <em>
-                            &ndash; {{ $post->user->name }}
+                            &ndash; {{ $post->user->getName() }}
                         </em>
                         {{ $post->created_at->format('d M Y') }}
                     </p>

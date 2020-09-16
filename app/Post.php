@@ -45,4 +45,55 @@ class Post extends Model
     public function comments() {
         return $this->hasMany(Comment::class);
     }
+
+    // ID
+    public function getId() {
+        return $this->attributes['id'];
+    }
+    public function setId($id) {
+        $this->attributes['id'] = $id;
+    }
+
+    // Title
+    public function getTitle() {
+        return $this->attributes['title'];
+    }
+    public function setTitle($title) {
+        $this->attributes['title'] = $title;
+    }
+
+    // Body
+    public function getBody() {
+        return $this->attributes['body'];
+    }
+    public function setBody($body) {
+        $this->attributes['body'] = $body;
+    }
+
+    // Iframe
+    public function getIframe() {
+        return $this->attributes['iframe'];
+    }
+    public function setIframe($iframe) {
+        $this->attributes['iframe'] = $iframe;
+    }
+
+    // Image
+    public function getImage() {
+        if($this->image) {
+            return url("storage/$this->image");
+        }
+    }
+    public function setImage($image) {
+        $this->attributes['image'] = $image;
+    }
+
+    // User_id
+    public function getUserId() {
+        return $this->attributes['user_id'];
+    }
+    public function setUserId($user_id) {
+        $this->attributes['user_id'] = $user_id;
+    }
+    
 }

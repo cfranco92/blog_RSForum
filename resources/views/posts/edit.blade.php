@@ -18,7 +18,7 @@
                     <form action="{{ route('posts.update', $post) }}" method="POST" enctype="multipart/form-data">
                         <div class="from-group">
                             <label> Title *</label>
-                            <input type="text" name="title" class="form-control" required value="{{ old('title', $post->title) }}">
+                            <input type="text" name="title" class="form-control" required value="{{ old('title', $post->getTitle()) }}">
                         </div>
                         <div class="from-group">
                             <label> Image</label>
@@ -26,11 +26,11 @@
                         </div>
                         <div class="from-group">
                             <label> Content *</label>
-                            <textarea name="body" rows="6" class="form-control" required>{{ old('body', $post->body) }}</textarea>
+                            <textarea name="body" rows="6" class="form-control" required>{{ old('body', $post->getBody()) }}</textarea>
                         </div>
                         <div class="from-group">
                             <label>Embebed Content *</label>
-                            <textarea name="ifram" class="form-control">{{ old('iframe', $post->iframe) }}</textarea>
+                            <textarea name="ifram" class="form-control">{{ old('iframe', $post->getIframe()) }}</textarea>
                         </div>
                         <div class="form-group">
                             @csrf
