@@ -18,7 +18,7 @@
                     <h5 class="card-title">{{ $post->getTitle() }}</h5>
                     <p class="card-text">
                         {{ $post->get_excerpt }}
-                        <a href="{{ route('post', $post) }}">Reed More</a>
+                        <a href="{{ route('post', $post) }}"> {{ __('posts.reedMore') }}</a>
                     </p>
                     <p class="text-muted mb-0">
                         <em>

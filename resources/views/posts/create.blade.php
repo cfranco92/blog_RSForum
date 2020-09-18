@@ -6,7 +6,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">Create Item</div>
+                <div class="card-header">{{ __('postscreate.cardHeader') }}</div>
 
                 <div class="card-body">
                     @if (session('status'))
@@ -21,24 +21,24 @@
                         enctype="multipart/form-data"
                     >
                         <div class="form-group">
-                            <label>Title *</label>
+                            <label>{{ __('postscreate.formGroupTitle') }}</label>
                             <input type="text" name="title" class="form-control" required>
                         </div>
                         <div class="form-group">
-                            <label>Image</label>
+                            <label>{{ __('postscreate.formGroupImage') }}</label>
                             <input type="file" name="file">
                         </div>
                         <div class="form-group">
-                            <label>Content *</label>
+                            <label>{{ __('postscreate.formGroupContent') }}</label>
                             <textarea name="body" rows="6" class="form-control" required></textarea>
                         </div>
                         <div class="form-group">
-                            <label>Embebed Content *</label>
+                            <label>{{ __('postscreate.formGroupEmbebedContent') }}</label>
                             <textarea name="iframe" class="form-control"></textarea>
                         </div>
                         <div class="form-group">
                             @csrf
-                            <input type="submit" value="Send" class="btn btn-sm btn-primary">
+                            <input type="submit" value="{{ __('postscreate.formGroupButton') }}" class="btn btn-sm btn-primary">
                         </div>
                     </form>
                 </div>

@@ -52,7 +52,7 @@
                         @else
                             <li class="nav-item">
                                 <a href="{{ route('posts.index')}}" class="nav-link">
-                                    Items
+                                    {{ __('layoutsapp.items') }}
                                 </a>
                             </li>
                             <li class="nav-item dropdown">

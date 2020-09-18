@@ -7,8 +7,8 @@
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">
-                    Items
-                    <a href="{{ route('posts.create') }}" class="btn btn-sm btn-primary float-right">Create</a>
+                    {{ __('postsindex.items') }}
+                    <a href="{{ route('posts.create') }}" class="btn btn-sm btn-primary float-right">{{ __('postsindex.create') }}</a>
                 </div>
 
                 <div class="card-body">
@@ -21,8 +21,8 @@
                     <table class="table">
                         <thead>
                             <tr>
-                                <th>ID</th>
-                                <th>Title</th>
+                                <th>{{ __('postsindex.id') }}</th>
+                                <th>{{ __('postsindex.title') }}</th>
                                 <th colspan="2">&nbsp;</th>
                             </tr>
                             <tbody>
@@ -32,7 +32,7 @@
                                         <td>{{ $post->getTitle() }}</td>
                                         <td>
                                             <a href="{{ route('posts.edit', $post) }}" class="btn btn-primary btn-sm">
-                                                Edit
+                                                {{ __('postsindex.edit') }}
                                             </a>
                                         </td>
                                         <td>
@@ -41,9 +41,9 @@
                                                 @method('DELETE')
                                                 <input 
                                                     type="submit" 
-                                                    value="Delete" 
+                                                    value="{{ __('postsindex.delete') }}" 
                                                     class="btn btn-sm btn-danger"
-                                                    onclick="return confirm('Do you want to delete...?')"
+                                                    onclick="return confirm('{{ __('postsindex.confirmationMessage') }}')"
                                                 >
                                             </form>
                                         </td>

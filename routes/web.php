@@ -14,8 +14,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Auth::routes();
-Route::get('/', 'PageController@posts');
 
+Route::get('/', 'PageController@posts')->name('posts');
 Route::get('/blog/{post}', 'PageController@post')->name('post');
 Route::get('/blog/comment/{comment}', 'PageController@comment')->name('comment');
 Route::get('/home', 'HomeController@index')->name('home');

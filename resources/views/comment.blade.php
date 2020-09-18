@@ -19,7 +19,7 @@
                     <div class="row p-5">
                         <div class="col-md-12">
                             <ul id="errors">
-                                    <b>Replies:</b><br />
+                                    <b>{{ __('comment.replies') }}</b><br />
                                     @foreach($comment->replies as $reply)
                                         {{ $reply->get_description }}<br />
                                         <em>
@@ -33,7 +33,7 @@
                     </div>
 
                     <br><br><hr>
-                    <h5 class="card-title">Create reply</h5>
+                    <h5 class="card-title">{{ __('comment.create')}}</h5>
                     @if (session('status'))
                         <div class="alert alert-success" role="alert">
                             {{ session('status') }}
@@ -45,15 +45,15 @@
                         enctype="multipart/form-data"
                     >
                         <div class="form-group">
-                            <label>Description *</label>
+                            <label>{{ __('comment.description') }}</label>
                             <textarea name="description" rows="6" class="form-control" required></textarea>
                         </div>
                         <div class="form-group">
-                            <input name="comment_id" value="{{$comment->id}}" type="hidden" required>
+                            <input name="comment_id" value="{{$comment->getId()}}" type="hidden" required>
                         </div>
                         <div class="form-group">
                             @csrf
-                            <input type="submit" value="Send" class="btn btn-sm btn-primary">
+                            <input type="submit" value="{{ __('comment.buttonSend') }}" class="btn btn-sm btn-primary">
                         </div>
                     </form>
                 </div>
