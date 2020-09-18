@@ -44,6 +44,7 @@
                         method="POST"
                         enctype="multipart/form-data"
                     >
+                    @csrf
                         <div class="form-group">
                             <label>{{ __('comment.description') }}</label>
                             <textarea name="description" rows="6" class="form-control" required></textarea>

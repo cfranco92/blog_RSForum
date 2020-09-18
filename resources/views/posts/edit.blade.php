@@ -16,6 +16,7 @@
                     @endif
 
                     <form action="{{ route('posts.update', $post) }}" method="POST" enctype="multipart/form-data">
+                        @csrf
                         <div class="form-group">
                             <label> {{ __('postsedit.formGroupTitle') }}</label>
                             <input type="text" name="title" class="form-control" required value="{{ old('title', $post->getTitle()) }}">

@@ -20,6 +20,7 @@
                         method="POST"
                         enctype="multipart/form-data"
                     >
+                    @csrf
                         <div class="form-group">
                             <label>{{ __('postscreate.formGroupTitle') }}</label>
                             <input type="text" name="title" class="form-control" required>

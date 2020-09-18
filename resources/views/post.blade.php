@@ -71,12 +71,13 @@
                         method="POST"
                         enctype="multipart/form-data"
                     >
+                    @csrf
                         <div class="form-group">
                             <label>{{ __('post.description') }}</label>
                             <textarea name="description" rows="6" class="form-control" required></textarea>
                         </div>
                         <div class="form-group">
-                            <input name="post_id" value="{{$post->id}}" type="hidden" required>
+                            <input name="post_id" value="{{$post->getId()}}" type="hidden" required>
                         </div>
                         <div class="form-group">
                             @csrf
