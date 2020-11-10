@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Post;
 use Illuminate\Http\Request;
 
-class ServiceTeamController extends Controller
+class StarwarsController extends Controller
 {
     
     /**
@@ -15,10 +15,9 @@ class ServiceTeamController extends Controller
      */
     public function index()
     {
-        $data = array(file_get_contents("http://3.217.114.44/public/api/v2/products"));
-        // https://swapi.dev/api/
+        $data = array(file_get_contents("https://swapi.dev/api/people/1"));
         // var_dump( $data );
-        return view('team', [
+        return view('starwars', [
             'posts' => Post::with('user')->latest()->paginate(),
             'data' => $data
         ]);

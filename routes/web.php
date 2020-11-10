@@ -21,6 +21,7 @@ Route::get('/blog/comment/{comment}', 'PageController@comment')->name('comment')
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/serviceTeam', 'ServiceTeamController@index')->name('team');
+Route::get('/starwars', 'StarwarsController@index')->name('starwars');
 
 Route::resource('posts', 'Backend\PostController')
 ->middleware('auth')
