@@ -31,3 +31,6 @@ Route::resource('comments', 'Backend\CommentController')
 Route::resource('replies', 'Backend\ReplyController')
 ->middleware('auth');
 // ->except('show');
+
+Route::get('/image/index', 'ImageController@index')->name("image.index");
+Route::post('/image/save', 'ImageController@save')->name("image.save");
