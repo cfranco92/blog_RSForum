@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Post;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Http;
 
 class StarwarsController extends Controller
 {
@@ -15,11 +16,8 @@ class StarwarsController extends Controller
      */
     public function index()
     {
-        $data = array(file_get_contents("https://swapi.dev/api/people/1"));
-        // var_dump( $data );
-        return view('starwars', [
-            'posts' => Post::with('user')->latest()->paginate(),
-            'data' => $data
-        ]);
+        $api = Http::get('https://swapi.dev/api/people/1');
+        $data = array($api);
+        return view('starwars', compact('data'));
     }
 }
