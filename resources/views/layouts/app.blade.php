@@ -39,6 +39,12 @@
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
+                        <li>
+                            <a class="nav-link" href="{{ route('starwars') }}">{{ __('Starwars_API') }}</a>
+                        </li>
+                        <li>
+                            <a class="nav-link" href="{{ route('team') }}">{{ __('Team10_API') }}</a>
+                        </li>
                         <!-- Authentication Links -->
                         @guest
                             <li class="nav-item">
@@ -73,6 +79,9 @@
                                 </div>
                             </li>
                         @endguest
+                        <li>
+                            <a class="nav-link" href="{{ route('lang', 'en') }}">{{ __('L') }}</a>
+                        </li>
                     </ul>
                 </div>
             </div>
