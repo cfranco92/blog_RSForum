@@ -1,5 +1,7 @@
 <?php
 
 return [
-    'items' => 'Items'
+    'items' => 'Items',
+    'language' => 'Language',
+    'logout' => 'Logout'
 ];

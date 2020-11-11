@@ -1,5 +1,7 @@
 <?php
 
 return [
-    'items' => 'Artículos'
+    'items' => 'Artículos',
+    'language' => 'Idioma',
+    'logout' => 'Cerrar sesión'
 ];
