@@ -79,9 +79,31 @@
                                 </div>
                             </li>
                         @endguest
-                        <li>
-                            <a class="nav-link" href="{{ route('lang', 'en') }}">{{ __('L') }}</a>
-                        </li>
+                      <li class="nav-item dropdown">
+                        <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                            Intern
+                        </a>
+
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="{{ route('lang', 'es') }}"
+                               onclick="event.preventDefault();
+                                             document.getElementById('lang-form').submit();">
+                                {{ __('Español') }}
+                            </a>
+                            <a class="dropdown-item" href="{{ route('lang', 'en') }}"
+                               onclick="event.preventDefault();
+                                             document.getElementById('lang2-form').submit();">
+                                {{ __('English') }}
+                            </a>
+
+                            <form id="lang-form" action="{{ route('lang', 'es') }}" method="GET" class="d-none">
+                                @csrf
+                            </form>
+                            <form id="lang2-form" action="{{ route('lang', 'en') }}" method="GET" class="d-none">
+                                @csrf
+                            </form>
+                        </div>
+                    </li>
                     </ul>
                 </div>
             </div>
